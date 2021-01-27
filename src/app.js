@@ -14,14 +14,14 @@ app.set('views',path.join(__dirname,'views')); //para que express vea la carpeta
 //app.use(routes)
 app.use(require('./routes/index.routes')) //se importan las rutas
 
-
+//si no existe la ruta entonces continua aqui, para invocar al 404
 
 //STATIC FILE (para poder crear la ruta estatica)
 app.use(express.static(path.join(__dirname,'../public')))
 //*** */
 
 app.use((req,res)=>{
-    res.sendFile(path.join(__dirname,'../public/index.html'))
+    res.sendFile(path.join(__dirname,'../public/404.html'))
 })
 
 
